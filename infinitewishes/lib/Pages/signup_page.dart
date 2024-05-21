@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:infinitewishes/Pages/login_page.dart';
 
 class SignUpPage extends StatelessWidget {
   @override
@@ -11,23 +12,33 @@ class SignUpPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding(
-                padding: EdgeInsets.only(left: screenWidth * 30),
-                child: Image.asset("assets/images/back.png"),
+              Align(
+                alignment: Alignment.topLeft,
+                child: IconButton(
+                  icon: Icon(
+                    Icons.arrow_back,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {},
+                ),
               ),
-              Padding(
-                padding: EdgeInsets.only(
-                    right: screenWidth * 0.2,
-                    bottom: screenWidth * 0.2,
-                    top: screenWidth * 0.39),
-                child: SizedBox(
-                  width: 127,
-                  height: 34,
-                  child: Text(
-                    "Sign up",
-                    style: GoogleFonts.metrophobic()
-                        .copyWith(fontSize: 24, fontWeight: FontWeight.w900),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      right: screenWidth * 0.2,
+                      bottom: screenWidth * 0.2,
+                      top: screenWidth * 0.39),
+                  child: SizedBox(
+                    width: 127,
+                    height: 34,
+                    child: Text(
+                      "Sign up",
+                      style: GoogleFonts.metrophobic()
+                          .copyWith(fontSize: 24, fontWeight: FontWeight.w900),
+                    ),
                   ),
                 ),
               ),
@@ -67,26 +78,48 @@ class SignUpPage extends StatelessWidget {
               const SizedBox(height: 10),
               const Text('Already have an account?'),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LoginPage()));
+                },
                 child: Text('Login'),
               ),
               SizedBox(height: 20),
-              Text('Or sign up with social account'),
+              Text(
+                'Or sign up with social account',
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  IconButton(
-                    icon: Icon(Icons.g_mobiledata, size: 50),
-                    onPressed: () {
-                      // Google sign up functionality here
-                    },
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: GestureDetector(
+                        onTap: () {
+                          //Google sign up functionality here
+                        },
+                        child: Image.asset("assets/images/Google.png")),
                   ),
-                  IconButton(
-                    icon: Icon(Icons.facebook, size: 50),
-                    onPressed: () {
-                      // Facebook sign up functionality here
-                    },
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: GestureDetector(
+                        onTap: () {
+                          //Facebook sign up functionality here
+                        },
+                        child: Image.asset("assets/images/Facebook.png")),
                   ),
+                  // IconButton(
+                  //   icon: Icon(Icons.g_mobiledata, size: 50),
+                  //   onPressed: () {
+                  //     // Google sign up functionality here
+                  //   },
+                  // ),
+                  // IconButton(
+                  //   icon: Icon(Icons.facebook, size: 50),
+                  //   onPressed: () {
+                  //     // Facebook sign up functionality here
+                  //   },
+                  // ),
                 ],
               ),
             ],

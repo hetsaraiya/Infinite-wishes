@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.sizeOf(context).width;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Forgot password'),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
@@ -17,6 +18,24 @@ class ForgotPasswordPage extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            Align(
+              alignment: Alignment.topLeft,
+              child: Padding(
+                padding: EdgeInsets.only(
+                    right: screenWidth * 0.2,
+                    bottom: screenWidth * 0.2,
+                    top: screenWidth * 0.39),
+                child: SizedBox(
+                  width: 256,
+                  height: 34,
+                  child: Text(
+                    "Forgot password",
+                    style: GoogleFonts.metrophobic()
+                        .copyWith(fontSize: 24, fontWeight: FontWeight.w900),
+                  ),
+                ),
+              ),
+            ),
             Text(
               'Please, enter your email address. You will receive a link to create a new password via email.',
               textAlign: TextAlign.center,
@@ -26,7 +45,8 @@ class ForgotPasswordPage extends StatelessWidget {
             TextField(
               decoration: InputDecoration(
                 labelText: 'Email',
-                errorText: 'Not a valid email address. Should be your@email.com',
+                errorText:
+                    'Not a valid email address. Should be your@email.com',
               ),
             ),
             SizedBox(height: 20),
