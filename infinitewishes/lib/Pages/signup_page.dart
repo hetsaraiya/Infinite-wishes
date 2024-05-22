@@ -1,14 +1,22 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:infinitewishes/Pages/login_page.dart';
 
-class SignUpPage extends StatelessWidget {
+class SignUpPage extends StatefulWidget {
+  SignUpPage({Key? key}) : super(key: key);
+
+  @override
+  _SignUpPageState createState() => _SignUpPageState();
+}
+
+class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -18,7 +26,7 @@ class SignUpPage extends StatelessWidget {
               Align(
                 alignment: Alignment.topLeft,
                 child: IconButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.arrow_back_ios,
                     color: Colors.white,
                   ),
@@ -30,8 +38,8 @@ class SignUpPage extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.only(
                       right: screenWidth * 0.2,
-                      bottom: screenWidth * 0.2,
-                      top: screenWidth * 0.39),
+                      bottom: screenHeight * 0.09,
+                      top: screenHeight * 0.11),
                   child: SizedBox(
                     width: 127,
                     height: 34,
@@ -49,20 +57,20 @@ class SignUpPage extends StatelessWidget {
                   suffixIcon: Icon(Icons.check, color: Colors.green),
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: screenHeight * 0.01),
               const TextField(
                 decoration: InputDecoration(
                   labelText: 'Email',
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: screenHeight * 0.01),
               const TextField(
                 decoration: InputDecoration(
                   labelText: 'Password',
                 ),
                 obscureText: true,
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: screenHeight * 0.03),
               SizedBox(
                 width: screenWidth * 0.9,
                 child: ElevatedButton(
@@ -76,16 +84,16 @@ class SignUpPage extends StatelessWidget {
                   child: const Text('SIGN UP'),
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: screenHeight * 0.015),
               const Text('Already have an account?'),
               TextButton(
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => LoginPage()));
                 },
-                child: Text('Login'),
+                child: const Text('Login'),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: screenHeight * 0.025),
               Text(
                 'Or sign up with social account',
                 style: Theme.of(context).textTheme.titleLarge,
