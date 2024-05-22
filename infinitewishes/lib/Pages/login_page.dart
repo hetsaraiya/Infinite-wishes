@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:infinitewishes/Pages/forgot_password_page.dart';
 
 class LoginPage extends StatelessWidget {
@@ -7,19 +8,22 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            // Add back button functionality here
-            Navigator.pop(context);
-          },
-        ),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            Align(
+              alignment: Alignment.topLeft,
+              child: IconButton(
+                icon: Icon(
+                  Icons.arrow_back_ios,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: Padding(
@@ -52,11 +56,18 @@ class LoginPage extends StatelessWidget {
               obscureText: true,
             ),
             SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Login functionality here
-              },
-              child: Text('LOGIN'),
+            SizedBox(
+              width: screenWidth * 0.9,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: HexColor("#EF3651"),
+                  foregroundColor: Colors.white,
+                ),
+                onPressed: () {
+                  // Sign up functionality here
+                },
+                child: const Text('LOGIN'),
+              ),
             ),
             TextButton(
               onPressed: () {
@@ -89,18 +100,7 @@ class LoginPage extends StatelessWidget {
                       },
                       child: Image.asset("assets/images/Facebook.png")),
                 ),
-                // IconButton(
-                //   icon: Icon(Icons.g_mobiledata, size: 50),
-                //   onPressed: () {
-                //     // Google sign up functionality here
-                //   },
-                // ),
-                // IconButton(
-                //   icon: Icon(Icons.facebook, size: 50),
-                //   onPressed: () {
-                //     // Facebook sign up functionality here
-                //   },
-                // ),
+
               ],
             ),
           ],

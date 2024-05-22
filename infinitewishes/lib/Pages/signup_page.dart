@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -18,7 +19,7 @@ class SignUpPage extends StatelessWidget {
                 alignment: Alignment.topLeft,
                 child: IconButton(
                   icon: Icon(
-                    Icons.arrow_back,
+                    Icons.arrow_back_ios,
                     color: Colors.white,
                   ),
                   onPressed: () {},
@@ -108,18 +109,6 @@ class SignUpPage extends StatelessWidget {
                         },
                         child: Image.asset("assets/images/Facebook.png")),
                   ),
-                  // IconButton(
-                  //   icon: Icon(Icons.g_mobiledata, size: 50),
-                  //   onPressed: () {
-                  //     // Google sign up functionality here
-                  //   },
-                  // ),
-                  // IconButton(
-                  //   icon: Icon(Icons.facebook, size: 50),
-                  //   onPressed: () {
-                  //     // Facebook sign up functionality here
-                  //   },
-                  // ),
                 ],
               ),
             ],
