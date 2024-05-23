@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:infinitewishes/BottomNavigation/bottom_navigation.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
   @override
@@ -13,7 +14,7 @@ class ForgotPasswordPage extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.arrow_back_ios,
                   color: Colors.white,
                 ),
@@ -40,25 +41,29 @@ class ForgotPasswordPage extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
+            const Text(
               'Please, enter your email address. You will receive a link to create a new password via email.',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16),
             ),
-            SizedBox(height: 10),
-            TextField(
+            const SizedBox(height: 10),
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Email',
                 errorText:
                     'Not a valid email address. Should be your@email.com',
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 // Forgot password functionality here
               },
-              child: Text('SEND'),
+              child: TextButton(
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>BottomTabBar()));
+                    },
+                  child: const Text("SEND",style: TextStyle(color: Colors.white),)),
             ),
           ],
         ),

@@ -8,6 +8,7 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -18,7 +19,7 @@ class SignUpPage extends StatelessWidget {
               Align(
                 alignment: Alignment.topLeft,
                 child: IconButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.arrow_back_ios,
                     color: Colors.white,
                   ),
@@ -30,16 +31,12 @@ class SignUpPage extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.only(
                       right: screenWidth * 0.2,
-                      bottom: screenWidth * 0.2,
-                      top: screenWidth * 0.39),
-                  child: SizedBox(
-                    width: 127,
-                    height: 34,
-                    child: Text(
-                      "Sign up",
-                      style: GoogleFonts.metrophobic()
-                          .copyWith(fontSize: 24, fontWeight: FontWeight.w900),
-                    ),
+                      bottom: screenHeight * 0.1,
+                      top: screenHeight * 0.1),
+                  child: Text(
+                    "Sign up",
+                    style: GoogleFonts.metrophobic()
+                        .copyWith(fontSize: 24, fontWeight: FontWeight.w900),
                   ),
                 ),
               ),
@@ -83,9 +80,9 @@ class SignUpPage extends StatelessWidget {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => LoginPage()));
                 },
-                child: Text('Login'),
+                child: const Text('Login'),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Text(
                 'Or sign up with social account',
                 style: Theme.of(context).textTheme.titleLarge,
