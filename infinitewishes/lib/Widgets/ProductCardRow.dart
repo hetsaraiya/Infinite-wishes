@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:infinitewishes/Widgets/product_card.dart';
@@ -59,3 +60,4 @@ class ProductRowWithType extends StatelessWidget {
     );
   }
 }
+
