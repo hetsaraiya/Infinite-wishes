@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'ProductCard.dart';
+import 'package:infinitewishes/Widgets/product_card.dart';
+
 
 class ProductRowWithType extends StatelessWidget {
   final String Type;
@@ -9,7 +10,6 @@ class ProductRowWithType extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double screenWidth = MediaQuery.sizeOf(context).width;
     final double screenHeight = MediaQuery.sizeOf(context).height;
     return Column(
       children: [

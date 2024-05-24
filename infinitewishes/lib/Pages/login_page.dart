@@ -101,7 +101,7 @@ class LoginPage extends StatelessWidget {
                         },
                         child: Image.asset("assets/images/Facebook.png")),
                   ),
-      
+
                 ],
               ),
             ],

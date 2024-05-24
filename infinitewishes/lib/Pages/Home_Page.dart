@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:infinitewishes/Pages/mainhome/ProductCardRow.dart';
-import 'ProductCard.dart';
+import 'package:infinitewishes/Widgets/ProductCardRow.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});

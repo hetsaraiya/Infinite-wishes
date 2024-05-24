@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:infinitewishes/Pages/mainhome/Home_Page.dart';
-import 'package:infinitewishes/Pages/mainhome/cartbag.dart';
-import 'package:infinitewishes/Pages/mainhome/faviorites.dart';
-import 'package:infinitewishes/Pages/mainhome/profile.dart';
-import 'package:infinitewishes/Pages/mainhome/shopping.dart';
+import 'package:infinitewishes/Pages/Home_Page.dart';
+import 'package:infinitewishes/Pages/cartbag.dart';
+import 'package:infinitewishes/Pages/faviorites.dart';
+import 'package:infinitewishes/Pages/profile.dart';
+import 'package:infinitewishes/Pages/shopping.dart';
 
 
 
@@ -15,7 +15,7 @@ class BottomTabBar extends StatefulWidget {
   State<BottomTabBar> createState() => _BottomTabBarState();
 }
 
-class _BottomTabBarState extends State<BottomTabBar> with SingleTickerProviderStateMixin {
+class _BottomTabBarState extends State<BottomTabBar> {
   int _currentindex=0;
   List<Widget> body=[
     const Home(),
@@ -26,7 +26,7 @@ class _BottomTabBarState extends State<BottomTabBar> with SingleTickerProviderSt
   ];
   @override
   Widget build(BuildContext context) {
-   //final TabController tabController=TabController(length: 5, vsync: this);
+    //final TabController tabController=TabController(length: 5, vsync: this);
     return DefaultTabController(
       length: 5,
       child: Scaffold(
@@ -43,8 +43,8 @@ class _BottomTabBarState extends State<BottomTabBar> with SingleTickerProviderSt
           currentIndex: _currentindex,
           onTap: (int newindex){
             setState(() {
-            _currentindex=newindex;
-          });},
+              _currentindex=newindex;
+            });},
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
             BottomNavigationBarItem(icon: Icon(Icons.shopping_cart),label: "Shopping"),
