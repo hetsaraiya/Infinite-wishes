@@ -21,7 +21,8 @@ class Home extends StatelessWidget {
               image: AssetImage("assets/images/Big Banner (1).png"),
               width: screenWidth,
               height: screenHeight * 0.65,
-              fit: BoxFit.fill,
+              fit: BoxFit.contain,
+              filterQuality:FilterQuality.high ,
             ),
             Padding(
                 padding: const EdgeInsets.all(8.0),

@@ -33,7 +33,8 @@ class Product extends StatelessWidget {
                 imageUrl,
                 height: screenHeight*0.33,
                 width: screenWidth*0.5,
-                fit: BoxFit.cover,
+                fit: BoxFit.contain,
+                filterQuality: FilterQuality.medium,
               ),
               Container(
                 margin: EdgeInsets.only(left: 5,top: 5),
